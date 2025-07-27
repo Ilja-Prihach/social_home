@@ -6,10 +6,11 @@
     gap: 50px;
     margin-top: 40px;
 
-    position: fixed; /* Фиксируем положение */
+    /*position: fixed; !* Фиксируем положение *!*/
     bottom: 10px;       /* Прикрепляем к низу страницы */
     left: 0;         /* Располагаем слева */
     right: 0;
+    padding-bottom: 60px;
 }
 
 .textarea {
