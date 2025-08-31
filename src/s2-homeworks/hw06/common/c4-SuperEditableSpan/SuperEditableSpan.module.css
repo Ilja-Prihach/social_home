@@ -1,11 +1,35 @@
 .spanBlock {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 .span {
+    color: #0080FF;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 1px dashed #0080FF;
 }
 
 .input {
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
+/*.input:focus {*/
+/*    outline: none;*/
+/*    border-color: #0080FF;*/
+/*    box-shadow: 0 0 0 2px rgba(0, 128, 255, 0.2);*/
+/*}*/
+
 .pen {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
 }
