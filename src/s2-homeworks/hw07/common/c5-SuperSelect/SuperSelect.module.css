@@ -1,9 +1,20 @@
 .select {
+    border: 1px solid #c2c2c2;     /* Серая граница */
+    border-radius: 2px;            /* Скругление углов */
+    width: 165px;                  /* Фиксированная ширина */
+    height: 24px;                  /* Высота элемента */
+    padding: 0 8px;                /* Внутренние отступы */
+    font-size: 14px;               /* Размер текста */
+    color: #0c0505;                   /* Цвет текста */
 }
 
 .select:focus {
+    border-color: #0066cc;         /* Синяя граница при фокусе */
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2); /* Синяя тень вокруг */
 }
 
 
 .option:hover {
+    background-color: #f0f0f0;     /* Светло-серый фон при наведении */
+    cursor: pointer;
 }
