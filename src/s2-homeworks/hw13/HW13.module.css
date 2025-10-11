@@ -1,22 +1,33 @@
+
 .buttonsContainer {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .responseContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .imageContainer {
+    flex-shrink: 0;
 }
 
-.image {
-}
-
-.textContainer{
+.textContainer {
+    flex-grow: 1;
 }
 
 .code {
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .text {
+    margin-bottom: 5px;
 }
+
 .info {
+    font-style: italic;
 }

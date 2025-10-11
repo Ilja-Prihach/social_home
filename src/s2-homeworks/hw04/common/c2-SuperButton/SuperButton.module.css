@@ -33,17 +33,17 @@
 }
 
 .default:hover {
-    width: 167px;
+    /*width: 167px;*/
     background: #0080ff;
 }
 
 .red:hover {
-    width: 167px;
+    /*width: 167px;*/
     background: #ff1a47;
 }
 
 .secondary:hover {
-    width: 167px;
+    /*width: 167px;*/
     background: #e5f0fa;
 }
 
