@@ -19,14 +19,14 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
-    const [isLoading, setIsLoading] = useState(false)
+    const [isDisabled, setIsDisabled] = useState(false)
 
     const send = (x?: boolean | null) => () => {
-        setIsLoading(true)
+        setIsDisabled(true)
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-                : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
+                : 'https://samurai.it-incubator.io/api/3.0/homework/test'
 
         setCode('')
         setImage('')
@@ -45,19 +45,22 @@ const HW13 = () => {
 
             })
             .catch((e) => {
-                if (x === false && e.response?.status === 400) {
+                if (e.response?.status === 400) {
                     setCode('Ошибка 400!')
                     setImage(error400)
                     setText("Ты не отправил success в body вообще!\n" +
                         "ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!")
                     setInfo("")
-                } else if (x === undefined && e.response?.status === 500) {
+                }
+
+                if ( e.response?.status === 500) {
                     setCode('Ошибка 500!')
                     setImage(error500)
                     setText("эмитация ошибки на сервере\n"+
                         "ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)")
                     setInfo("")
-                } else if (x === null) {
+                }
+                if (x === null) {
                     setCode('Error')
                     setImage(errorUnknown)
                     setText("Network Error\n" +
@@ -65,7 +68,7 @@ const HW13 = () => {
                     setInfo("")
                 }
             })
-            .finally(() => setIsLoading(false))
+            .finally(() => setIsDisabled(false))
 
     }
 
@@ -80,7 +83,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
-                        disabled={isLoading}
+                        disabled={isDisabled}
                     >
                         Send true
                     </SuperButton>
@@ -89,7 +92,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
-                        disabled={isLoading}
+                        disabled={isDisabled}
                     >
                         Send false
                     </SuperButton>
@@ -98,7 +101,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
-                        disabled={isLoading}
+                        disabled={isDisabled}
                     >
                         Send undefined
                     </SuperButton>
@@ -107,7 +110,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
-                        disabled={isLoading}
+                        disabled={isDisabled}
                     >
                         Send null
                     </SuperButton>
